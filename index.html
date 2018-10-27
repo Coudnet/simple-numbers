@@ -5,7 +5,14 @@
     <title>Title</title>
 </head>
 <body>
+<input type="number" class="input"><br>
+<button class="btn">Посчитать</button>
+<br>
+Результат <span class="result"></span>
 <script>
+    document.querySelector('.btn').addEventListener("click", function () {
+        document.querySelector('.result').innerHTML = simpleNumber(document.querySelector('.input').value);
+    })
     function simpleNumber(num) {
         let matrix = [];
         let result = [];
@@ -41,7 +48,7 @@
         return result;
     }
 
-    console.log(simpleNumber(120));
+    console.log(simpleNumber(1000));
 </script>
 </body>
 </html>
