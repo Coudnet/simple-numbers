@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function simpleNumber(num) {
+        let matrix = [];
+        let result = [];
+        let i = 0;
+        let n = 0;
+
+        let smpl = 2;
+
+        while(n <= num) {
+            matrix.push(n);
+            n++;
+        }
+
+        while(1) {
+            for(i = Math.pow(smpl, 2); i < num; i++) {
+                if(matrix[i] && !(matrix[i] % smpl)) matrix[i] = null;
+            }
+            for(i = smpl + 1; i < num; i++) {
+                if(matrix[i]) {
+                    smpl = matrix[i];
+                    break;
+                }
+            }
+            if(Math.pow(smpl, 2) >= num) break;
+        }
+
+        for(i = 2; i < num; i++) {
+            if(matrix[i]) {
+                result.push(matrix[i])
+            }
+        }
+
+        return result;
+    }
+
+    console.log(simpleNumber(120));
+</script>
+</body>
+</html>
