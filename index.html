@@ -26,9 +26,9 @@
             n++;
         }
 
-        while(1) {
-            for(i = Math.pow(smpl, 2); i < num; i++) {
-                if(matrix[i] && !(matrix[i] % smpl)) matrix[i] = null;
+        while(Math.pow(smpl, 2) < num) {
+            for(i = Math.pow(smpl, 2); i < num; i += smpl) {
+                matrix[i] = null;
             }
             for(i = smpl + 1; i < num; i++) {
                 if(matrix[i]) {
@@ -36,7 +36,6 @@
                     break;
                 }
             }
-            if(Math.pow(smpl, 2) >= num) break;
         }
 
         for(i = 2; i < num; i++) {
